@@ -5,7 +5,7 @@ import os
 favorite_genre1 = None
 favorite_genre2 = None
 while True:
-    apikey = input("Enter your API key: ")
+    apikey = input("Enter your API key for OMDb: ")
     response = requests.get(f"https://www.omdbapi.com/?apikey={apikey}&t=The Nun")
     data = response.json()
     if data.get("Response") == "True":
