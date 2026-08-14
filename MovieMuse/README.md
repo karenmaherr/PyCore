@@ -1,4 +1,4 @@
-# 🎬 MovieMuse
+#  MovieMuse
 
 <p align="center">
   <a href="https://ibb.co/dsb6pwxq"><img src="https://i.ibb.co/CpJv93DZ/Chat-GPT-Image-Aug-14-2026-04-30-45-AM.png" alt="Chat-GPT-Image-Aug-14-2026-04-30-45-AM" border="0"></a>
@@ -14,11 +14,11 @@ It's a menu-driven Python program that talks to the OMDb API to pull real movie 
 
 ## Features
 
-- 🔍 **Search any movie** — pulls the title, year, rating, release date, genre, runtime, and plot straight from OMDb.
-- ⭐ **Rate what you've watched** — rate on a 1–5 scale, with input validation so a stray "7" or a typo doesn't break the flow.
-- 📜 **Track your history** — every rating gets logged to a CSV file you can look back through anytime.
-- 🎭 **Taste analysis** — looks at everything you rated 4 or higher, pulls each movie's genre from the API, and ranks which genres show up most.
-- 🎬 **Get recommendations** — takes your top genre(s) and searches OMDb for related titles, so you're not stuck guessing.
+-  **Search any movie** — pulls the title, year, rating, release date, genre, runtime, and plot straight from OMDb.
+-  **Rate what you've watched** — rate on a 1–5 scale, with input validation so a stray "7" or a typo doesn't break the flow.
+-  **Track your history** — every rating gets logged to a CSV file you can look back through anytime.
+-  **Taste analysis** — looks at everything you rated 4 or higher, pulls each movie's genre from the API, and ranks which genres show up most.
+-  **Get recommendations** — takes your top genre(s) and searches OMDb for related titles, so you're not stuck guessing.
 
 ## How It Works
 
