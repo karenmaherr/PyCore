@@ -4,7 +4,13 @@ import csv
 import os
 favorite_genre1 = None
 favorite_genre2 = None
-apikey=input(" Enter your api key for OMDB :")
+while True:
+    apikey = input("Enter your API key: ")
+    response = requests.get(f"https://www.omdbapi.com/?apikey={apikey}&t=The Nun")
+    data = response.json()
+    if data.get("Response") == "True":
+        break
+    print("Enter a valid API key")
 while True:
     print("""
             *Movie Recomindation System*        
@@ -90,9 +96,9 @@ while True:
                 favorite_genre1=sorted_genres[0]
                 if len(sorted_genres)>1:
                     favorite_genre2=sorted_genres[1]
-                    favorite_genre2="True"
+                    favorite_genre22="True"
                 else:
-                    favorite_genre2="False"
+                    favorite_genre22="False"
     elif ans=="5":
         if not os.path.exists("movie_rating.csv"):
             print("You didn't watch any movie")
@@ -113,7 +119,7 @@ while True:
                     if r<n1:
                         print(data1["Search"][r]["Title"])
                     if r<n2:
-                        if favorite_genre2=="True":
+                        if favorite_genre22=="True":
                             print(data2["Search"][r]["Title"])        
             else:
                 print("No movies found")
