@@ -10,7 +10,7 @@ while True:
             *Movie Recomindation System*        
 
         1-Search Movies
-        2-Rate for watched movies Movies
+        2-Rate for watched movies
         3-My Movies History 
         4-Analyze My Taste
         5-Get recommendations
