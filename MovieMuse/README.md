@@ -4,7 +4,6 @@
   <a href="https://ibb.co/dsb6pwxq"><img src="https://i.ibb.co/CpJv93DZ/Chat-GPT-Image-Aug-14-2026-04-30-45-AM.png" alt="Chat-GPT-Image-Aug-14-2026-04-30-45-AM" border="0"></a>
 </p>
 
-> A command-line movie companion that learns what you like and helps you figure out what to watch next.
 
 ## About This Project
 
