@@ -74,7 +74,7 @@ while True:
                             genre_count[genre]+=1
                         else:
                             genre_count[genre]=1
-            print(" Your Taste Amalysis \n")
+            print(" Your Taste Analysis \n")
 
             sorted_genres = sorted(
                 genre_count,
