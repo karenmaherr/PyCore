@@ -99,9 +99,3 @@ moviemuse/
 - [ ] Add proper error handling for network issues and invalid API responses
 - [ ] Build a simple web version with Flask
 - [ ] Add automated tests
-
-## License
-
-This project is open source under the MIT License.
-
-
