@@ -35,30 +35,7 @@ The whole thing runs on one main loop that routes you to whichever feature you p
 - **requests** — handling the API calls
 - **pandas** — filtering and working with the ratings data
 - **csv** (standard library) — reading and writing the ratings log
-
-## Getting Started
-
-### 1. Get a free OMDb API key
-Grab one here: https://www.omdbapi.com/apikey.aspx — takes about a minute.
-
-### 2. Clone the repo
-```bash
-git clone https://github.com/your-username/MovieMuse.git
-cd MovieMuse
-```
-
-### 3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Run it
-```bash
-python movie_recommender.py
-```
-
-You'll be asked for your OMDb API key once at startup, then dropped straight into the main menu.
-
+ 
 ## Example
 
 ```
