@@ -4,6 +4,7 @@ import csv
 import os
 favorite_genre1 = None
 favorite_genre2 = None
+favorite_genre22=="False"
 while True:
     apikey = input("Enter your API key for OMDb: ")
     response = requests.get(f"https://www.omdbapi.com/?apikey={apikey}&t=The Nun")
@@ -97,8 +98,6 @@ while True:
                 if len(sorted_genres)>1:
                     favorite_genre2=sorted_genres[1]
                     favorite_genre22="True"
-                else:
-                    favorite_genre22="False"
     elif ans=="5":
         if not os.path.exists("movie_rating.csv"):
             print("You didn't watch any movie")
