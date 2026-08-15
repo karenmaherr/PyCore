@@ -14,6 +14,19 @@ GENRE_MAP = {
     "Fantasy": 14, "History": 36, "Horror": 27, "Music": 10402,
     "Mystery": 9648, "Romance": 10749, "Science Fiction": 878,
     "TV Movie": 10770, "Thriller": 53, "War": 10752, "Western": 37}
+if os.path.exists("favgenres.txt"):
+    with open("favgenres.txt","r")as file:
+        lines = [line.strip() for line in file]
+    favorite_genre1 = lines[0]
+    genre_id1 = GENRE_MAP.get(favorite_genre1)
+    if len(lines) > 1:
+        favorite_genre2 = lines[1]
+        favorite_genre22 = True
+        genre_id2 = GENRE_MAP.get(favorite_genre2)
+    if len(lines) > 2:
+        favorite_genre3 = lines[2]
+        favorite_genre33 = True
+        genre_id3 = GENRE_MAP.get(favorite_genre3)
 if not os.path.exists("apikey.txt"):
     while True:
         key=input("Enter a valid API key for IMDB: ")
@@ -25,7 +38,7 @@ if not os.path.exists("apikey.txt"):
         file.write(key)
 else:
     with open("apikey.txt","r") as file:
-        key = file.readlines()
+        key = file.read().strip()
 while True:
     print("""
             *Movie Recommendation System*
@@ -56,9 +69,9 @@ while True:
                 print(str(data["runtime"])+"m")
                 print(data["overview"])
             else:
-                print("Movie not found")
+                print("Movie n found")
         else:
-            print("Movie not found")
+                print("Movie not found")
     elif ans == "2":
         movie = input("Enter the movie name: ")
         rate = float(input("Enter your rate for the movie from 1 to 5: "))
@@ -122,6 +135,12 @@ while True:
                     favorite_genre3 = sorted_genres[2]
                     favorite_genre33 = True
                     genre_id3 = GENRE_MAP.get(favorite_genre3)
+                with open("favgenres.txt","w") as file:
+                    file.write(favorite_genre1+"\n")
+                    if favorite_genre22:
+                        file.write(favorite_genre2+"\n")
+                    if favorite_genre33:
+                        file.write(favorite_genre3)
     elif ans == "5":
         if not os.path.exists("movie_rating.csv"):
             print("You didn't watch any movie")
@@ -129,6 +148,8 @@ while True:
             print("You didn't rate enough movies")
         else:
             print("Your top recommendations based on your favourite genres \n")
+            n2 = 0
+            n3 = 0
             url1 = f"https://api.themoviedb.org/3/discover/movie?api_key={key}&with_genres={genre_id1}&sort_by=popularity.desc"
             if favorite_genre22:
                 url2 = f"https://api.themoviedb.org/3/discover/movie?api_key={key}&with_genres={genre_id2}&sort_by=popularity.desc"
