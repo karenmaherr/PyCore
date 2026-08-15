@@ -9,15 +9,15 @@
 
 I built MovieMuse to get comfortable working with a real external API, handling data that doesn't always come in clean, and putting together a full command-line app from scratch — not a script that runs once and prints an answer, but something you can actually open, use, and come back to.
 
-It's a menu-driven Python program that talks to the OMDb API to pull real movie data, lets you log what you've watched and how much you liked it, and then uses that history to figure out your taste well enough to suggest what to watch next.
+It's a menu-driven Python program that talks to the IMDB API to pull real movie data, lets you log what you've watched and how much you liked it, and then uses that history to figure out your taste well enough to suggest what to watch next.
 
 ## Features
 
--  **Search any movie** — pulls the title, year, rating, release date, genre, runtime, and plot straight from OMDb.
+-  **Search any movie** — pulls the title, year, release date, genre, runtime, and plot straight from IMDB.
 -  **Rate what you've watched** — rate on a 1–5 scale, with input validation so a stray "7" or a typo doesn't break the flow.
 -  **Track your history** — every rating gets logged to a CSV file you can look back through anytime.
 -  **Taste analysis** — looks at everything you rated 4 or higher, pulls each movie's genre from the API, and ranks which genres show up most.
--  **Get recommendations** — takes your top genre(s) and searches OMDb for related titles, so you're not stuck guessing.
+-  **Get recommendations** — takes your top genre(s) and searches IMDB for related titles, so you're not stuck guessing.
 
 ## How It Works
 
@@ -25,13 +25,13 @@ The whole thing runs on one main loop that routes you to whichever feature you p
 
 1. Every action goes through a single menu (search / rate / history / analyze / recommend / exit).
 2. Ratings are stored locally in `movie_rating.csv` — no database, which keeps the project lightweight and easy to inspect (you can just open the file and see your own data).
-3. Taste analysis re-queries OMDb for the genre of every highly-rated movie, then counts genre frequency using a plain dictionary and `sorted()` — no extra library needed for the ranking itself.
-4. Recommendations use your top genre(s) as search terms against OMDb's search endpoint.
+3. Taste analysis re-queries IMDB for the genre of every highly-rated movie, then counts genre frequency using a plain dictionary and `sorted()` — no extra library needed for the ranking itself.
+4. Recommendations use your top genre(s) as search terms against IMDB's search endpoint.
 
 ## Tech Stack
 
 - **Python 3**
-- **[OMDb API](https://www.omdbapi.com/)** — movie data source
+- **[IMDB API](https://www.imdbapi.com/)** — movie data source
 - **requests** — handling the API calls
 - **pandas** — filtering and working with the ratings data
 - **csv** (standard library) — reading and writing the ratings log
