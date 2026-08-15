@@ -48,7 +48,7 @@ while True:
                 print(data["title"])
                 print(data["release_date"])
                 print(data["genres"][0]["name"])
-                print(data["runtime"]+"m")
+                print(data["runtime"]+str("m"))
                 print(data["overview"])
             else:
                 print("Movie not found")
