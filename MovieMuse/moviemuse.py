@@ -14,13 +14,18 @@ GENRE_MAP = {
     "Fantasy": 14, "History": 36, "Horror": 27, "Music": 10402,
     "Mystery": 9648, "Romance": 10749, "Science Fiction": 878,
     "TV Movie": 10770, "Thriller": 53, "War": 10752, "Western": 37}
-while True:
-    apikey = input("Enter your API key for TMDB: ")
-    response = requests.get(f"https://api.themoviedb.org/3/movie/550?api_key={apikey}")
-    data = response.json()
-    if response.status_code == 200:
-        break
-    print("Enter a valid API key")
+if not os.path.exists("apikey.txt"):
+    while True:
+        key=input("Enter a valid API key for IMDB: ")
+        response = requests.get(f"https://api.themoviedb.org/3/movie/550?api_key={key}")
+        data = response.json()
+        if response.status_code == 200:
+            break
+    with open("apikey.txt","a") as file:
+        file.write(key)
+else:
+    with open("apikey.txt","r") as file:
+        key = file.readlines()
 while True:
     print("""
             *Movie Recommendation System*
@@ -36,19 +41,19 @@ while True:
         break
     if ans == "1":
         movie = input("Enter the movie name: ")
-        search_url = f"https://api.themoviedb.org/3/search/movie?api_key={apikey}&query={movie}"
+        search_url = f"https://api.themoviedb.org/3/search/movie?api_key={key}&query={movie}"
         search_response = requests.get(search_url)
         search_data = search_response.json()
         if search_data.get("results"):
             movie_id = search_data["results"][0]["id"]
-            url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={apikey}"
+            url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={key}"
             response = requests.get(url)
             data = response.json()
             if response.status_code == 200:
                 print(data["title"])
                 print(data["release_date"])
                 print(data["genres"][0]["name"])
-                print(data["runtime"]+str("m"))
+                print(str(data["runtime"])+"m")
                 print(data["overview"])
             else:
                 print("Movie not found")
@@ -82,12 +87,12 @@ while True:
             favorite_movies = df[df["rate"] >= 4]
             genre_count = {}
             for movie in favorite_movies["movie"]:
-                search_url = f"https://api.themoviedb.org/3/search/movie?api_key={apikey}&query={movie}"
+                search_url = f"https://api.themoviedb.org/3/search/movie?api_key={key}&query={movie}"
                 search_response = requests.get(search_url)
                 search_data = search_response.json()
                 if search_data.get("results"):
                     movie_id = search_data["results"][0]["id"]
-                    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={apikey}"
+                    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={key}"
                     response = requests.get(url)
                     data = response.json()
                     if response.status_code == 200:
@@ -124,15 +129,15 @@ while True:
             print("You didn't rate enough movies")
         else:
             print("Your top recommendations based on your favourite genres \n")
-            url1 = f"https://api.themoviedb.org/3/discover/movie?api_key={apikey}&with_genres={genre_id1}&sort_by=popularity.desc"
+            url1 = f"https://api.themoviedb.org/3/discover/movie?api_key={key}&with_genres={genre_id1}&sort_by=popularity.desc"
             if favorite_genre22:
-                url2 = f"https://api.themoviedb.org/3/discover/movie?api_key={apikey}&with_genres={genre_id2}&sort_by=popularity.desc"
+                url2 = f"https://api.themoviedb.org/3/discover/movie?api_key={key}&with_genres={genre_id2}&sort_by=popularity.desc"
                 response2 = requests.get(url2)
                 data2 = response2.json()
                 if response2.status_code == 200:
                     n2 = len(data2["results"])
             if favorite_genre33:
-                url3 = f"https://api.themoviedb.org/3/discover/movie?api_key={apikey}&with_genres={genre_id3}&sort_by=popularity.desc"
+                url3 = f"https://api.themoviedb.org/3/discover/movie?api_key={key}&with_genres={genre_id3}&sort_by=popularity.desc"
                 response3 = requests.get(url3)
                 data3 = response3.json()
                 if response3.status_code == 200:
