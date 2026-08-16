@@ -69,7 +69,7 @@ while True:
                 print(str(data["runtime"])+"m")
                 print(data["overview"])
             else:
-                print("Movie n found")
+                print("Movie not found")
         else:
                 print("Movie not found")
     elif ans == "2":
