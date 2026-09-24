@@ -36,5 +36,5 @@ Each project folder includes its own code and (where relevant) a brief explanati
 
 ##  Purpose
 
-This repo is a living log of my learning journey in AI/ML — not a production codebase. Expect experiments, iterations, and continuous updates as I grow my skills and portfolio.
+This repo is a living log of my learning journey in AI/ML — not a production codebase. Expect experiments, iterations, and continuous updates as I grow my skills.
 
