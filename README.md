@@ -1,6 +1,6 @@
 # PyCore
 
-A personal collection of Python projects covering **Machine Learning**, **Deep Learning**, and **Agentic AI** practice. This repo serves as a hands-on portfolio and playground for applying concepts learned through coursework and self-study.
+A personal collection of Python projects covering **Python Fundamentals**, **Machine Learning**, **Deep Learning**, and **Agentic AI** practice. This repo serves as a hands-on portfolio and playground for applying concepts learned through coursework and self-study.
 
 ##  About
 
@@ -33,11 +33,6 @@ pycore/
 ##  Getting Started
 
 Each project folder includes its own code and (where relevant) a brief explanation of what it does and what was learned.
-
-```bash
-git clone https://github.com/<your-username>/pycore.git
-cd pycore
-```
 
 ##  Purpose
 
