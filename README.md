@@ -16,8 +16,7 @@ PyCore is where I build, break, and rebuild things while learning ML/DL/Agentic 
 
 - Python
 - Common ML/DL libraries (NumPy, Pandas, Scikit-learn, etc.)
-- Jupyter Notebooks for experimentation
-
+- For Agentic AI (LangChain, etc.)
 ##  Getting Started
 
 Each project folder includes its own code and (where relevant) a brief explanation of what it does and what was learned.
