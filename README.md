@@ -1,6 +1,6 @@
 # PyCore
 
-A personal collection of Python projects covering **Python Fundamentals**, **Machine Learning**, **Deep Learning**, and **Agentic AI** practice. This repo serves as a hands-on practice projects and playground for applying concepts learned through coursework and self-study.
+A personal collection of Python practice projects covering **Python Fundamentals**, **Machine Learning**, **Deep Learning**, and **Agentic AI** practice. This repo serves as a playground for applying concepts learned through coursework and self-study.
 
 ##  About
 
