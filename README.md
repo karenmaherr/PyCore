@@ -10,7 +10,7 @@ PyCore is where I build, break, and rebuild things while learning ML/DL/Agentic 
 
 - **Machine Learning**: model building & evaluation, etc
 - **Deep Learning**: neural networks, etc
-- **Agentic AI**: building and experimenting with AI agents while learning
+- **Agentic AI**: building and experimenting while learning
 
 ##  Tech Stack
 
